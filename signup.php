@@ -20,6 +20,130 @@
             </ul>
         </nav>
     </header>
+    <!-- Signup Section -->
+    <section class="signup-section">
+        <div class="signup-container">
+            <div class="signup-header">
+                <div class="signup-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1>Créer un compte</h1>
+                <p>Commencez à gérer votre budget gratuitement</p>
+            </div>
+
+            <form action="signup.php" method="POST" id="signupForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstname">Prénom</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input 
+                                type="text" 
+                                id="firstname" 
+                                name="firstname" 
+                                class="form-control" 
+                                placeholder="Votre prénom"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">Nom</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input 
+                                type="text" 
+                                id="lastname" 
+                                name="lastname" 
+                                class="form-control" 
+                                placeholder="Votre nom"
+                                required
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-control" 
+                            placeholder="exemple@email.com"
+                            required
+                        >
+                    </div>
+                    <div class="error-message" id="emailError">Veuillez entrer une adresse email valide</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-control" 
+                            placeholder="Créer un mot de passe"
+                            required
+                            oninput="checkPasswordStrength()"
+                        >
+                        <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                            <i class="fas fa-eye" id="toggleIcon1"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="password-strength-bar" id="strengthBar"></div>
+                    </div>
+                    <div class="error-message" id="passwordError">Le mot de passe doit contenir au moins 8 caractères</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirmer le mot de passe</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input 
+                            type="password" 
+                            id="confirm_password" 
+                            name="confirm_password" 
+                            class="form-control" 
+                            placeholder="Confirmer votre mot de passe"
+                            required
+                        >
+                        <button type="button" class="password-toggle" onclick="togglePassword('confirm_password')">
+                            <i class="fas fa-eye" id="toggleIcon2"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="confirmError">Les mots de passe ne correspondent pas</div>
+                </div>
+
+                <label class="terms-checkbox">
+                    <input type="checkbox" name="terms" id="terms" required>
+                    <span>
+                        J'accepte les <a href="#">conditions d'utilisation</a> et 
+                        la <a href="#">politique de confidentialité</a>
+                    </span>
+                </label>
+
+                <button type="submit" class="btn-signup" id="submitBtn">
+                    Créer mon compte
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>OU</span>
+            </div>
+
+            <div class="login-link">
+                Vous avez déjà un compte ? <a href="login.php">Se connecter</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
